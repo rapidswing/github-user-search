@@ -6,11 +6,15 @@ import Bio from 'components/Bio/Bio'
 import SocialBar from 'components/SocialBar/SocialBar'
 import StatsBar from 'components/StatsBar/StatsBar'
 
+const StyledBasicInfo = styled(BasicInfo)`
+  margin-left: 1.9rem;
+`
+
 const UnstyledUserCard = ({ className, children, user }) => {
   return (
     <div className={className}>
       <Avatar user={user} />
-      <BasicInfo user={user} />
+      <StyledBasicInfo user={user} />
       <Bio user={user} />
       <StatsBar user={user} />
       <SocialBar user={user} />

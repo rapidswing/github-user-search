@@ -1,22 +1,39 @@
 [
   {
     "colors": {
-      "brightBlue": "#0079FF",
-      "gray": "#697C9A",
-      "paleBlue": "#4B6A9B",
-      "darkGray": "#2B3442",
-      "offWhite": "#F6F8FF",
-      "almostWhite": "#FEFEFE",
-      "white": "#FFFFFF"
+      "background": "#F6F8FF",
+      "themeToggle": "#4B6A9B",
+      "title": "#222731",
+      "searchBg": "#FFFFFF",
+      "searchText": "#222731",
+      "searchBtnBg": "#0079FF",
+      "name": "#2B3442",
+      "login": "#0079FF",
+      "date": "#697C9A",
+      "bio": "#4B6A9B",
+      "statsBg": "#F6F8FF",
+      "statsLabel": "#4B6A9B",
+      "statsValue": "#2B3442",
+      "social": "#4B6A9B"
     },
     "font": "Space Mono"
   },
   {
     "colors": {
-      "brightBlue": "#0079FF",
-      "white": "#FFFFFF",
-      "darkBlue": "#141D2F",
-      "blue": "#1E2A47"
+      "background": "#141D2F",
+      "themeToggle": "#FFFFFF",
+      "title": "#FFFFFF",
+      "searchBg": "#1E2A47",
+      "searchText": "#FFFFFF",
+      "searchBtnBg": "#0079FF",
+      "name": "#FFFFFF",
+      "login": "#0079FF",
+      "date": "#FFFFFF",
+      "bio": "#4B6A9B",
+      "statsBg": "#141D2F",
+      "statsLabel": "#FFFFFF",
+      "statsValue": "#FFFFFF",
+      "social": "#FFFFFF"
     },
     "font": "Space Mono"
   }
