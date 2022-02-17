@@ -1,11 +1,8 @@
 import styled from 'styled-components'
 
-const StyledStatsBar = styled.div`
-`
-
-const StatsBar = ({ user }) => {
+const UnstyledStatsBar = ({ className, user }) => {
   return (
-    <StyledStatsBar>
+    <div className={className}>
        {/* {console.log(user)} */}
       <div>Repos</div>
       <div>Followers</div>
@@ -13,8 +10,10 @@ const StatsBar = ({ user }) => {
       <div>{user.public_repos || '0'}</div>
       <div>{user.followers || '0'}</div>
       <div>{user.following || '0'}</div>
-    </StyledStatsBar>
+    </div>
   )
 }
+
+const StatsBar = styled(UnstyledStatsBar)``
 
 export default StatsBar

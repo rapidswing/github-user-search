@@ -5,33 +5,34 @@ import IconWebsite from 'assets/icon-website.svg'
 import IconTwitter from 'assets/icon-twitter.svg'
 import IconCompany from 'assets/icon-company.svg'
 
-const StyledSocialBar = styled.div`
+const UnstyledSocial = ({ alt, className, data, img }) => (
+  <div className={className}>
+    <div>
+      <img src={img} alt={alt} />
+    </div>
+    {data || 'Not available.'}
+  </div>
+)
+
+const Social = styled(UnstyledSocial)`
+  display: flex;
+  flex-direction: row;
 `
 
-const StyledSocial = styled.div`
-`
-
-const SocialBar = ({ user }) => {
+const UnstyledSocialBar = ({ className, user }) => {
   return (
-    <StyledSocialBar>
-      <StyledSocial>
-        <img src={IconLocation} alt="Location" />
-        {user.location || 'Not available.'}
-      </StyledSocial>
-      <StyledSocial>
-        <img src={IconWebsite} alt="Website" />
-        {user.blog || 'Not available.'}
-      </StyledSocial>
-      <StyledSocial>
-        <img src={IconTwitter} alt="Twitter" />
-        {user.twitter || 'Not available.'}
-      </StyledSocial>
-      <StyledSocial>
-        <img src={IconCompany} alt="Company" />
-        {user.company || 'Not available.'}
-      </StyledSocial>
-    </StyledSocialBar>
+    <div className={className}>
+      <Social alt="Location" data={user.location} img={IconLocation} />
+      <Social alt="Website" data={user.website} img={IconWebsite} />
+      <Social alt="Twitter" data={user.twitter} img={IconTwitter} />
+      <Social alt="Company" data={user.company} img={IconCompany} />
+    </div>
   )
 }
+
+const SocialBar = styled(UnstyledSocialBar)`
+  display: flex;
+  flex-direction: column;
+`
 
 export default SocialBar

@@ -1,36 +1,22 @@
 import styled from 'styled-components'
 
+import Avatar from 'components/Avatar/Avatar'
 import BasicInfo from 'components/BasicInfo/BasicInfo'
-import Socials from 'components/SocialBar/SocialBar'
+import Bio from 'components/Bio/Bio'
+import SocialBar from 'components/SocialBar/SocialBar'
 import StatsBar from 'components/StatsBar/StatsBar'
 
 const UnstyledUserCard = ({ className, children, user }) => {
   return (
     <div className={className}>
-      <Avatar>
-        <img src={user.avatar_url} alt="User avatar" />
-      </Avatar>
+      <Avatar user={user} />
       <BasicInfo user={user} />
-      <Bio user={user}>{user.bio || 'No bio available.'}</Bio>
-      <WrappedStatsBar user={user} />
-      <WrappedSocials user={user} />
+      <Bio user={user} />
+      <StatsBar user={user} />
+      <SocialBar user={user} />
     </div>
   )
 }
-
-const Avatar = styled.div`
-  img {
-    border-radius: 3.5rem;
-    height: 7rem;
-    width: 7rem;
-  }
-`
-
-const Bio = styled.div`
-`
-
-const WrappedStatsBar = styled(StatsBar)``
-const WrappedSocials = styled(Socials)``
 
 const UserCard = styled(UnstyledUserCard)`
   background: ${props => props.theme.colors.white};
@@ -42,11 +28,11 @@ const UserCard = styled(UnstyledUserCard)`
     grid-column: 1 / 3;
   }
 
-  ${WrappedStatsBar} {
+  ${StatsBar} {
     grid-column: 1 / 3;
   }
 
-  ${WrappedSocials} {
+  ${SocialBar} {
     grid-column: 1 / 3;
   }
 `
