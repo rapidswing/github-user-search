@@ -40,9 +40,9 @@ const SearchIcon = styled.div`
   padding-left: 1.6rem;
 `
 
-const SearchBar = () => {
+const SearchBar = ({ className }) => {
   return (
-    <StyledSearchBar>
+    <StyledSearchBar className={className}>
       <SearchIcon>
         <img src={IconSearch} alt="Search" />
       </SearchIcon>
