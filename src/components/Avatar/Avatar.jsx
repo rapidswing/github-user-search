@@ -7,6 +7,10 @@ const UnstyledAvatar = ({ className, children, user }) => (
 )
 
 const Avatar = styled(UnstyledAvatar)`
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  
   img {
     border-radius: 3.5rem;
     height: 7rem;

@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 const UnstyledBio = ({ className, children, user }) => (
-  <div className={children}>
+  <div className={className}>
     {user.bio || 'No bio available.'}
   </div>
 )

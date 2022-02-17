@@ -3,7 +3,6 @@ import styled from 'styled-components'
 const UnstyledStatsBar = ({ className, user }) => {
   return (
     <div className={className}>
-       {/* {console.log(user)} */}
       <div>Repos</div>
       <div>Followers</div>
       <div>Following</div>
