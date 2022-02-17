@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import IconSearch from 'assets/icon-search.svg'
 
 const StyledSearchBar = styled.div`
+  background: ${(props) => props.theme.colors.almostWhite};
   display: grid;
   grid-template-columns: auto 1fr auto;
 `

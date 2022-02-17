@@ -24,12 +24,11 @@ const GlobalStyle = createGlobalStyle`
   }
 
   html {
-    font-family: 'Space Mono';
     font-size: 10px;  // 10px = 1rem
   }
 
   body {
-    background: ${({ theme }) => theme}
+    font-family: ${(props) => props.theme.font}
   }
 `
 
@@ -45,10 +44,10 @@ export default function App() {
   useEffect(() => {
     WebFont.load({
       google: {
-        families: ['Space Mono'] 
+        families: [`${selectedTheme.font}`]
       }
     })
-  }, [])
+  }, [selectedTheme.font])
 
   return (
     <>
