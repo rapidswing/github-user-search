@@ -29,7 +29,6 @@ const Container = styled.div`
 `
 
 export default function App() {
-  // const [selectedTheme, setSelectedTheme] = useState(themes.light);
   const [selectedTheme, setSelected] = useState(themes[0]);
 
   return (
