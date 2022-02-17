@@ -28,7 +28,8 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    font-family: ${(props) => props.theme.font}
+    background: ${props => props.theme.colors.offWhite};
+    font-family: ${props => props.theme.font}
   }
 `
 

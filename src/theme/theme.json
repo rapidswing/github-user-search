@@ -6,7 +6,8 @@
       "paleBlue": "#4B6A9B",
       "darkGray": "#2B3442",
       "offWhite": "#F6F8FF",
-      "almostWhite": "#FEFEFE"
+      "almostWhite": "#FEFEFE",
+      "white": "#FFFFFF"
     },
     "font": "Space Mono"
   },
