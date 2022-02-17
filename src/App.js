@@ -1,11 +1,12 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 
 import { createGlobalStyle, ThemeProvider } from 'styled-components'
 import styled from 'styled-components'
 
 import { useOctokit } from 'hooks/UseOctokit'
-import { SearchBar } from 'component/SearchBar/SearchBar'
-import { TitleBar } from 'component/TitleBar/TitleBar'
+import SearchBar from 'components/SearchBar/SearchBar'
+import TitleBar from 'components/TitleBar/TitleBar'
+import UserCard from 'components/UserCard/UserCard'
 
 import themes from 'theme/theme.json'
 
@@ -41,7 +42,7 @@ export default function App() {
         <Container>
           <TitleBar />
           <SearchBar />
-          {console.log(data)}
+          {data && <UserCard user={data} />}
         </Container>
       </ThemeProvider>
     </>

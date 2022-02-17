@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from 'styled-components'
 
 import IconMoon from 'assets/icon-moon.svg'
 import IconSun from 'assets/icon-sun.svg'
@@ -17,7 +17,7 @@ const StyledTitleBar = styled.div`
   justify-content: space-between;
 `
 
-export const TitleBar = () => (
+const TitleBar = () => (
   <StyledTitleBar>
     <Title>devfinder</Title>
     <ToggleThemeButton>
@@ -26,3 +26,5 @@ export const TitleBar = () => (
     </ToggleThemeButton>
   </StyledTitleBar>
 )
+
+export default TitleBar;

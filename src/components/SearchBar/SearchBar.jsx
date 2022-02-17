@@ -7,7 +7,7 @@ const StyledSearchBar = styled.div`
   grid-template-columns: auto 1fr auto;
 `
 
-export const SearchBar = () => {
+const SearchBar = () => {
   return (
     <StyledSearchBar>
       <img src={IconSearch} alt="Search" />
@@ -16,3 +16,5 @@ export const SearchBar = () => {
     </StyledSearchBar>
   )
 }
+
+export default SearchBar
