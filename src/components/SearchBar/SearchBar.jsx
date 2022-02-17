@@ -15,6 +15,7 @@ const UnstyledSearchBar = ({ className, children }) => (
 const SearchBar = styled(UnstyledSearchBar)`
   align-items: center;
   background: ${props => props.theme.colors.searchBg};
+  box-shadow: 0 1.6rem 3rem -0.1rem rgba(70, 96, 187, 0.2);
   border-radius: 0.7rem;
   display: grid;
   grid-template-columns: auto 1fr auto;
