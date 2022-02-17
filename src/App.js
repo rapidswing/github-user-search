@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import { createGlobalStyle, ThemeProvider } from 'styled-components'
 import styled from 'styled-components'
 
+import { SearchBar } from 'component/SearchBar/SearchBar'
 import { TitleBar } from 'component/TitleBar/TitleBar'
 
 import themes from 'theme/theme.json'
@@ -37,6 +38,7 @@ export default function App() {
         <GlobalStyle />
         <Container>
           <TitleBar />
+          <SearchBar />
         </Container>
       </ThemeProvider>
     </>

@@ -11,20 +11,18 @@ const ToggleThemeButton = styled.div`
 
 `
 
-const TitleBarStyle = styled.div`
+const StyledTitleBar = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 `
 
-const TitleBar = () => (
-  <TitleBarStyle>
+export const TitleBar = () => (
+  <StyledTitleBar>
     <Title>devfinder</Title>
     <ToggleThemeButton>
       <span>DARK</span>
       <img src={IconMoon} alt="Moon" />
     </ToggleThemeButton>
-  </TitleBarStyle>
+  </StyledTitleBar>
 )
-
-export { TitleBar };
