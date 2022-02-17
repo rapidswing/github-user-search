@@ -1,22 +1,22 @@
-{
-  "light": {
+[
+  {
     "colors": {
-      "bright-blue": "#0079FF",
+      "brightBlue": "#0079FF",
       "gray": "#697C9A",
-      "pale-blue": "#4B6A9B",
-      "dark-gray": "#2B3442",
-      "off-white": "#F6F8FF",
-      "almost-white": "#FEFEFE"
+      "paleBlue": "#4B6A9B",
+      "darkGray": "#2B3442",
+      "offWhite": "#F6F8FF",
+      "almostWhite": "#FEFEFE"
     },
     "font": "Space Mono"
   },
-  "dark": {
+  {
     "colors": {
-      "bright-blue": "#0079FF",
+      "brightBlue": "#0079FF",
       "white": "#FFFFFF",
-      "dark-blue": "#141D2F",
+      "darkBlue": "#141D2F",
       "blue": "#1E2A47"
     },
     "font": "Space Mono"
   }
-}
+]

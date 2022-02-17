@@ -1,7 +1,11 @@
-import { createGlobalStyle } from 'styled-components'
+import { useEffect, useState } from 'react'
+
+import { createGlobalStyle, ThemeProvider } from 'styled-components'
 import styled from 'styled-components'
 
-import theme from 'theme/theme.json'
+import { TitleBar } from 'component/TitleBar/TitleBar'
+
+import themes from 'theme/theme.json'
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -14,19 +18,28 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
   }
+
+  body {
+    background: ${({ theme }) => theme}
+  }
 `
 
 const Container = styled.div`
-  margin: auto;
+  
 `
 
 export default function App() {
+  // const [selectedTheme, setSelectedTheme] = useState(themes.light);
+  const [selectedTheme, setSelected] = useState(themes[0]);
+
   return (
     <>
-      <GlobalStyle />
-      <Container>
-        
-      </Container>
+      <ThemeProvider theme={selectedTheme} >
+        <GlobalStyle />
+        <Container>
+          <TitleBar />
+        </Container>
+      </ThemeProvider>
     </>
   )
 }
