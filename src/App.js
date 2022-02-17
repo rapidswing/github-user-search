@@ -42,6 +42,10 @@ const StyledSearchBar = styled(SearchBar)`
   margin-top: 3.6rem;
 `
 
+const StyledUserCard = styled(UserCard)`
+  margin-top: 1.6rem;
+`
+
 export default function App() {
   const [selectedTheme, setSelected] = useState(themes[0])
   const { data, isLoading, error } = useOctokit('octocat')
@@ -61,7 +65,7 @@ export default function App() {
         <Container>
           <TitleBar />
           <StyledSearchBar />
-          {data && <UserCard user={data} />}
+          {data ? <StyledUserCard user={data} /> : undefined}
         </Container>
       </ThemeProvider>
     </>

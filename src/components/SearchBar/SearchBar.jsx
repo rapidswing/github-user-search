@@ -2,7 +2,20 @@ import styled from 'styled-components'
 
 import IconSearch from 'assets/icon-search.svg'
 
-const StyledSearchBar = styled.div`
+const UnstyledSearchBar = ({ className }) => {
+  return (
+    <div className={className}>
+      <SearchIcon>
+        <img src={IconSearch} alt="Search" />
+      </SearchIcon>
+      
+      <input type="text" placeholder="Search GitHub username…" />
+      <button>Search</button>
+    </div>
+  )
+}
+
+const SearchBar = styled(UnstyledSearchBar)`
   align-items: center;
   background: ${(props) => props.theme.colors.almostWhite};
   border-radius: 0.7rem;
@@ -39,18 +52,5 @@ const StyledSearchBar = styled.div`
 const SearchIcon = styled.div`
   padding-left: 1.6rem;
 `
-
-const SearchBar = ({ className }) => {
-  return (
-    <StyledSearchBar className={className}>
-      <SearchIcon>
-        <img src={IconSearch} alt="Search" />
-      </SearchIcon>
-      
-      <input type="text" placeholder="Search GitHub username…" />
-      <button>Search</button>
-    </StyledSearchBar>
-  )
-}
 
 export default SearchBar
