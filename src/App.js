@@ -28,7 +28,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background: ${props => props.theme.colors.offWhite};
+    background: ${props => props.theme.colors.background};
     font-family: ${props => props.theme.font}
   }
 `
