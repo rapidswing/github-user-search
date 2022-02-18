@@ -19,6 +19,8 @@ const StyledStatsBar = styled(StatsBar)`
 `
 
 const StyledSocialBar = styled(SocialBar)`
+  display: flex;
+  flex-direction: column;
   margin-top: 2.4rem;
 `
 
@@ -36,6 +38,7 @@ const UnstyledUserCard = ({ className, children, user }) => {
 
 const UserCard = styled(UnstyledUserCard)`
   background: ${props => props.theme.colors.userCardBg};
+  border-radius: 1.5rem;
   display: grid;
   grid-template-columns: auto 1fr;
   padding: 3.2rem 2.4rem 4.8rem;

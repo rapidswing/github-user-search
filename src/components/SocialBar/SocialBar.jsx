@@ -5,18 +5,33 @@ import IconWebsite from 'assets/icon-website.svg'
 import IconTwitter from 'assets/icon-twitter.svg'
 import IconCompany from 'assets/icon-company.svg'
 
-const UnstyledSocial = ({ alt, className, data, img }) => (
+const UnstyledSocial = ({ alt, className, data, img, ...rest }) => (
   <div className={className}>
     <div>
       <img src={img} alt={alt} />
     </div>
-    {data || 'Not available.'}
+    <div>
+      {data || 'Not available'}
+    </div>
   </div>
 )
 
 const Social = styled(UnstyledSocial)`
   display: flex;
   flex-direction: row;
+  opacity: ${props => props.data ? 1 : 0.5};
+
+  div:nth-of-type(1) {
+    height: 2rem;
+    width: 2rem;
+  }
+
+  div:nth-of-type(2) {
+    color: ${props => props.theme.colors.social};
+    font-size: 1.3rem;
+    line-height: 1.9rem;
+    margin-left: 1.3rem;
+  }
 `
 
 const UnstyledSocialBar = ({ className, user }) => {
@@ -31,8 +46,9 @@ const UnstyledSocialBar = ({ className, user }) => {
 }
 
 const SocialBar = styled(UnstyledSocialBar)`
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  gap: 1.6rem;
+  grid-template-columns: 1fr;
 `
 
 export default SocialBar
