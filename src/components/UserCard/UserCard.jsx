@@ -39,6 +39,7 @@ const UnstyledUserCard = ({ className, children, user }) => {
 const UserCard = styled(UnstyledUserCard)`
   background: ${props => props.theme.colors.userCardBg};
   border-radius: 1.5rem;
+  box-shadow: ${props => props.theme.name === 'light' ? '0 1.6rem 3rem -0.1rem rgba(70, 96, 187, 0.2)' : 'none'};
   display: grid;
   grid-template-columns: auto 1fr;
   padding: 3.2rem 2.4rem 4.8rem;
