@@ -11,6 +11,9 @@ const Avatar = styled(UnstyledAvatar)`
   display: flex;
   flex-direction: row;
   
+  @media (min-width: 1440px) {
+  }
+
   img {
     border-radius: 3.5rem;
     height: 7rem;

@@ -43,8 +43,8 @@ const Container = styled.div`
   }
 
   @media (min-width: 1440px) {
-    margin-top: 14rem;
     width: 730px;
+    margin-top: 14.2rem;
   }
 `
 
