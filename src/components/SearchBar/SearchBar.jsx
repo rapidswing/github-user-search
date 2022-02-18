@@ -1,16 +1,33 @@
+import { useState } from 'react'
+
 import styled from 'styled-components'
 
 import IconSearch from 'assets/icon-search.svg'
 
-const UnstyledSearchBar = ({ className, children }) => (
-  <div className={className}>
-    <SearchIcon>
-      <img src={IconSearch} alt="Search" />
-    </SearchIcon>
-    <input type="text" placeholder="Search GitHub username…" />
-    <button>Search</button>
-  </div>
-)
+const UnstyledSearchBar = ({ className, children, error, setName }) => {
+  const [inputName, setInputName] = useState('')
+
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    if (inputName) setName(inputName)
+  }
+
+  return (
+    < form className={className} onSubmit={handleSubmit} >
+      <SearchIcon>
+        <img src={IconSearch} alt="Search" />
+      </SearchIcon>
+      <input
+        onChange={(event) => setInputName(event.target.value)}
+        placeholder="Search GitHub username…"
+        type="text"
+        value={inputName}
+      />
+      <button>Search</button>
+    </form >
+  )
+
+}
 
 const SearchBar = styled(UnstyledSearchBar)`
   align-items: center;
