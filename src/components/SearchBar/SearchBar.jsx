@@ -14,7 +14,10 @@ const ErrorMessage = styled(UnstyledErrorMessage)`
   color: ${props => props.theme.colors.errorText};
   display: flex;
   flex-direction: row;
+  font-size: 1.5rem;
+  font-weight: bold;
   height: 100%;
+  line-height: 2.2rem;
   padding-left: 1rem;
   position: absolute;
   right: 0;
