@@ -13,7 +13,7 @@ const UnstyledSearchBar = ({ className, children, error, setName }) => {
   }
 
   return (
-    < form className={className} onSubmit={handleSubmit} >
+    <form className={className} onSubmit={handleSubmit} >
       <SearchIcon>
         <img src={IconSearch} alt="Search" />
       </SearchIcon>
@@ -33,7 +33,7 @@ const SearchBar = styled(UnstyledSearchBar)`
   align-items: center;
   background: ${props => props.theme.colors.searchBg};
   box-shadow: ${props => props.theme.name === 'light' ? '0 1.6rem 3rem -0.1rem rgba(70, 96, 187, 0.2)' : 'none'};
-  border-radius: 0.7rem;
+  border-radius: 1.5rem;
   display: grid;
   grid-template-columns: auto 1fr auto;
 
@@ -49,11 +49,24 @@ const SearchBar = styled(UnstyledSearchBar)`
     line-height: 2.1rem;
     margin: 0.7rem;
     padding: 1.25rem 1.4rem 1.25rem 1.8rem;
+
+    @media (min-width: 768px) {
+      font-size: 1.6rem;
+      letter-spacing: 0.01rem;
+      line-height: 2.4rem;
+      margin: .95rem 1rem;
+      padding: 1.3rem 2.35rem;
+    }
   }
 
   img {
     height: 2rem;
     width: 2rem;
+
+    @media (min-width: 768px) {
+        height: 2.4rem;
+        width: 2.4rem;
+    }
   }
 
   input {
@@ -64,6 +77,11 @@ const SearchBar = styled(UnstyledSearchBar)`
     font-size: 1.3rem;
     line-height: 2.5rem;
     margin-left: 0.7rem;
+
+    @media (min-width: 768px) {
+      font-size: 1.8rem;
+      margin-left: 2.4rem;
+    }
 
     ::placeholder,
     ::-webkit-input-placeholder {
@@ -79,6 +97,10 @@ const SearchBar = styled(UnstyledSearchBar)`
 
 const SearchIcon = styled.div`
   padding-left: 1.6rem;
+
+  @media (min-width: 768px) {
+    padding-left: 3.2rem;
+  }
 `
 
 export default SearchBar

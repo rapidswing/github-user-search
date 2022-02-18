@@ -34,9 +34,15 @@ const GlobalStyle = createGlobalStyle`
 `
 
 const Container = styled.div`
-  padding: 3.1rem 2.4rem 0;
-  margin: 0 auto;
+  padding: 0 2.4rem;
+  margin: 3.1rem auto 0;
   width: 375px;
+
+  @media (min-width: 768px) {
+    margin-top: 14rem;
+    padding: 0 9.75rem;
+    width: 768px;
+  }
 `
 
 const StyledSearchBar = styled(SearchBar)`
