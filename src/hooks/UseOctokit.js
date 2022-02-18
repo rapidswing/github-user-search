@@ -9,7 +9,7 @@ export const useOctokit = (initialName) => {
   const [error, setError] = useState(null)
 
   const clearError = () => {
-    setError(null);
+    setError(null)
   }
 
   useEffect(() => {

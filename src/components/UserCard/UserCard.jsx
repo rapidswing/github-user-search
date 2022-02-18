@@ -54,7 +54,7 @@ const StyledSocialBar = styled(SocialBar)`
   }
 `
 
-const UnstyledUserCard = ({ className, children, user }) => {
+const UnstyledUserCard = ({ className, user }) => {
   return (
     <div className={className}>
       <StyledAvatar user={user} />

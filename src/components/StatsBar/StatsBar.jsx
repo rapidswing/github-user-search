@@ -37,18 +37,16 @@ const Value = styled.div`
   }
 `
 
-const UnstyledStatsBar = ({ className, user }) => {
-  return (
-    <div className={className}>
-      <Label>Repos</Label>
-      <Label>Followers</Label>
-      <Label>Following</Label>
-      <Value>{user.public_repos || '0'}</Value>
-      <Value>{user.followers || '0'}</Value>
-      <Value>{user.following || '0'}</Value>
-    </div>
-  )
-}
+const UnstyledStatsBar = ({ className, user }) => (
+  <div className={className}>
+    <Label>Repos</Label>
+    <Label>Followers</Label>
+    <Label>Following</Label>
+    <Value>{user.public_repos || '0'}</Value>
+    <Value>{user.followers || '0'}</Value>
+    <Value>{user.following || '0'}</Value>
+  </div>
+)
 
 const StatsBar = styled(UnstyledStatsBar)`
   background: ${props => props.theme.colors.statsBg};

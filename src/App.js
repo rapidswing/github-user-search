@@ -43,8 +43,8 @@ const Container = styled.div`
   }
 
   @media (min-width: 1440px) {
-    width: 730px;
     margin-top: 14.2rem;
+    width: 730px;
   }
 `
 
@@ -62,7 +62,13 @@ const StyledUserCard = styled(UserCard)`
 
 export default function App() {
   const [selectedTheme, setSelectedTheme] = useState(themes['light'])
-  const { data, setName, isLoading, clearError, error } = useOctokit('octocat')
+  const {
+    clearError,
+    data,
+    error,
+    isLoading,
+    setName
+  } = useOctokit('octocat')
 
   useEffect(() => {
     WebFont.load({
@@ -74,9 +80,9 @@ export default function App() {
 
   const toggleTheme = () => {
     if (selectedTheme.name === 'light') {
-      setSelectedTheme(themes['dark']);
+      setSelectedTheme(themes['dark'])
     } else {
-      setSelectedTheme(themes['light']);
+      setSelectedTheme(themes['light'])
     }
   }
 
@@ -86,7 +92,12 @@ export default function App() {
         <GlobalStyle />
         <Container>
           <TitleBar theme={selectedTheme} toggleTheme={toggleTheme} />
-          <StyledSearchBar clearError={clearError} error={error} isLoading={isLoading} setName={setName} />
+          <StyledSearchBar 
+            clearError={clearError}
+            error={error}
+            isLoading={isLoading}
+            setName={setName}
+          />
           {data ? <StyledUserCard user={data} /> : undefined}
         </Container>
       </ThemeProvider>

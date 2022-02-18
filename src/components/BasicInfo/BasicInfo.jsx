@@ -1,17 +1,16 @@
 import styled from 'styled-components'
 import moment from 'moment'
 
-const UnstyledBasicInfo = ({ className, user }) => {  
-  return (
-    <div className={className}>
-      <UserName>{user.name}</UserName>
-      <Login>@{user.login}</Login>
-      <JoinDate>
-        Joined {moment(user.created_at).utc().format('D MMM YYYY')}
-      </JoinDate>
-    </div>
-  )
-}
+const UnstyledBasicInfo = ({ className, user }) => (
+  <div className={className}>
+    <UserName>{user.name}</UserName>
+    <Login>@{user.login}</Login>
+    <JoinDate>
+      Joined {moment(user.created_at).utc().format('D MMM YYYY')}
+    </JoinDate>
+  </div>
+)
+
 
 const BasicInfo = styled(UnstyledBasicInfo)`
   display: flex;

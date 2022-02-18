@@ -50,7 +50,7 @@ const InputContainer = styled(UnstyledInputContainer)`
   position: relative;
 `
 
-const UnstyledSearchBar = ({ className, children, clearError, error, isLoading, setName }) => {
+const UnstyledSearchBar = ({ className, clearError, error, setName }) => {
   const [inputName, setInputName] = useState('')
 
   const handleSubmit = (event) => {
@@ -72,7 +72,6 @@ const UnstyledSearchBar = ({ className, children, clearError, error, isLoading, 
       <button>Search</button>
     </form >
   )
-
 }
 
 const SearchIcon = styled.div`

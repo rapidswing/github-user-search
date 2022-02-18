@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const UnstyledAvatar = ({ className, children, user }) => (
+const UnstyledAvatar = ({ className, user }) => (
   <div className={className}>
     <img src={user.avatar_url} alt="User avatar" />
   </div>
@@ -10,9 +10,6 @@ const Avatar = styled(UnstyledAvatar)`
   align-items: center;
   display: flex;
   flex-direction: row;
-  
-  @media (min-width: 1440px) {
-  }
 
   img {
     border-radius: 3.5rem;

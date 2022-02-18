@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import IconMoon from 'assets/icon-moon.svg'
 import IconSun from 'assets/icon-sun.svg'
 
-const UnstyledTitleBar = ({ className, children, theme, toggleTheme }) => (
+const UnstyledTitleBar = ({ className, theme, toggleTheme }) => (
   <div className={className}>
     <Title>devfinder</Title>
     <ToggleTheme onClick={() => toggleTheme()}>
@@ -50,4 +50,4 @@ const ToggleTheme = styled.div`
   }
 `
 
-export default TitleBar;
+export default TitleBar

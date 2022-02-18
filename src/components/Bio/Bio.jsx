@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const UnstyledBio = ({ className, children, user }) => (
+const UnstyledBio = ({ className, user }) => (
   <div className={className}>
     {user.bio || 'This profile has no bio'}
   </div>

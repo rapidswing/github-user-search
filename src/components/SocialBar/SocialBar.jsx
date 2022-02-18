@@ -14,7 +14,7 @@ const UnstyledSocial = ({ className, property, data, img }) => {
         <Icon />
       </div>
       <div>
-        {data ? 
+        {data ?
           (property === 'Website' ? <a href={data} alt="User's website" >{data}</a> : data) :
           'Not available'
         }
@@ -31,7 +31,7 @@ const Social = styled(UnstyledSocial)`
   div:nth-of-type(1) {
     height: 2rem;
     width: 2rem;
-
+    
     path {
       fill: ${props => props.theme.colors.social};
     }
@@ -65,16 +65,14 @@ const Social = styled(UnstyledSocial)`
   }
 `
 
-const UnstyledSocialBar = ({ className, user }) => {
-  return (
-    <div className={className}>
-      <Social property="Location" data={user.location} img={IconLocation} />
-      <Social property="Website" data={user.blog} img={IconWebsite} />
-      <Social property="Twitter" data={user.twitter_username} img={IconTwitter} />
-      <Social property="Company" data={user.company} img={IconCompany} />
-    </div>
-  )
-}
+const UnstyledSocialBar = ({ className, user }) => (
+  <div className={className}>
+    <Social property="Location" data={user.location} img={IconLocation} />
+    <Social property="Website" data={user.blog} img={IconWebsite} />
+    <Social property="Twitter" data={user.twitter_username} img={IconTwitter} />
+    <Social property="Company" data={user.company} img={IconCompany} />
+  </div>
+)
 
 const SocialBar = styled(UnstyledSocialBar)`
   display: grid;
