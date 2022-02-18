@@ -12,7 +12,6 @@ const UnstyledSocial = ({ className, property, data, img }) => {
     <div className={className}>
       <div>
         <Icon />
-        {/* <img src={img} alt={property} /> */}
       </div>
       <div>
         {data || 'Not available'}
@@ -58,6 +57,12 @@ const SocialBar = styled(UnstyledSocialBar)`
   display: grid;
   gap: 1.6rem;
   grid-template-columns: 1fr;
+
+  @media (min-width: 768px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
 `
 
 export default SocialBar

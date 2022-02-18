@@ -51,6 +51,10 @@ const StyledSearchBar = styled(SearchBar)`
 
 const StyledUserCard = styled(UserCard)`
   margin-top: 1.6rem;
+
+  @media (min-width: 768px) {
+    margin-top: 2.4rem;
+  }
 `
 
 export default function App() {

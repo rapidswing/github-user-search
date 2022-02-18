@@ -16,6 +16,10 @@ const UnstyledBasicInfo = ({ className, user }) => {
 const BasicInfo = styled(UnstyledBasicInfo)`
   display: flex;
   flex-direction: column;
+
+  @media (min-width: 768px) {
+    margin-top: 1rem;
+  }
 `
 
 const UserName = styled.div`
@@ -23,20 +27,36 @@ const UserName = styled.div`
   font-size: 1.6rem;
   font-weight: bold;
   line-height: 2.4rem;
+
+  @media (min-width: 768px) {
+    font-size: 2.6rem;
+    line-height: 3.9rem;
+  }
 `
 
 const Login = styled.div`
   color: ${props => props.theme.colors.login};
   font-size: 1.3rem;
   line-height: 1.9rem;
+  margin-bottom: 0.6rem;
   text-decoration: underline;
+
+  @media (min-width: 768px) {
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+  }
 `
 
 const JoinDate = styled.div`
   color: ${props => props.theme.colors.date};
   font-size: 1.3rem;
   line-height: 1.9rem;
-  margin-top: auto;
+
+  @media (min-width: 768px) {
+    font-size: 1.5rem;
+    line-height: 2.2rem;
+    /* padding-top:  */
+  }
 `
 
 export default BasicInfo

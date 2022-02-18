@@ -8,10 +8,17 @@ import StatsBar from 'components/StatsBar/StatsBar'
 
 const StyledBasicInfo = styled(BasicInfo)`
   margin-left: 1.9rem;
+  @media (min-width: 768px) {
+    margin-left: 4.1rem;
+  }
 `
 
 const StyledBio = styled(Bio)`
   margin-top: 3.3rem;
+
+  @media (min-width: 768px) {
+    margin-top: 2.4rem;
+  }
 `
 
 const StyledStatsBar = styled(StatsBar)`
@@ -19,8 +26,6 @@ const StyledStatsBar = styled(StatsBar)`
 `
 
 const StyledSocialBar = styled(SocialBar)`
-  display: flex;
-  flex-direction: column;
   margin-top: 2.4rem;
 `
 
@@ -54,6 +59,10 @@ const UserCard = styled(UnstyledUserCard)`
 
   ${StyledSocialBar} {
     grid-column: 1 / 3;
+  }
+  
+  @media (min-width: 768px) {
+    padding: 4rem;
   }
 `
 
