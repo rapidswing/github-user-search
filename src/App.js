@@ -29,12 +29,13 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     background: ${props => props.theme.colors.background};
-    font-family: ${props => props.theme.font}
+    font-family: ${props => props.theme.font};
   }
 `
 
 const Container = styled.div`
-  padding: 3.1rem 2.4rem 0; 
+  padding: 3.1rem 2.4rem 0;
+  margin: 0 auto;
   width: 375px;
 `
 
@@ -64,7 +65,6 @@ export default function App() {
     } else {
       setSelectedTheme(themes['light']);
     }
-    console.log('hi')
   }
 
   return (
