@@ -10,14 +10,26 @@ const StyledBasicInfo = styled(BasicInfo)`
   margin-left: 1.9rem;
 `
 
+const StyledBio = styled(Bio)`
+  margin-top: 3.3rem;
+`
+
+const StyledStatsBar = styled(StatsBar)`
+  margin-top: 2.4rem;
+`
+
+const StyledSocialBar = styled(SocialBar)`
+  margin-top: 2.4rem;
+`
+
 const UnstyledUserCard = ({ className, children, user }) => {
   return (
     <div className={className}>
       <Avatar user={user} />
       <StyledBasicInfo user={user} />
-      <Bio user={user} />
-      <StatsBar user={user} />
-      <SocialBar user={user} />
+      <StyledBio user={user} />
+      <StyledStatsBar user={user} />
+      <StyledSocialBar user={user} />
     </div>
   )
 }
@@ -28,15 +40,15 @@ const UserCard = styled(UnstyledUserCard)`
   grid-template-columns: auto 1fr;
   padding: 3.2rem 2.4rem 4.8rem;
 
-  ${Bio} {
+  ${StyledBio} {
     grid-column: 1 / 3;
   }
 
-  ${StatsBar} {
+  ${StyledStatsBar} {
     grid-column: 1 / 3;
   }
 
-  ${SocialBar} {
+  ${StyledSocialBar} {
     grid-column: 1 / 3;
   }
 `

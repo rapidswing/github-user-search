@@ -6,6 +6,10 @@ const UnstyledBio = ({ className, children, user }) => (
   </div>
 )
 
-const Bio = styled(UnstyledBio)``
+const Bio = styled(UnstyledBio)`
+  color: ${props => props.theme.colors.bio};
+  font-size: 1.3rem;
+  line-height: 2.5rem;
+`
 
 export default Bio
