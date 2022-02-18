@@ -25,6 +25,22 @@ const Social = styled(UnstyledSocial)`
   flex-direction: row;
   opacity: ${props => props.data ? 1 : 0.5};
 
+  @media (min-width: 768px) {
+    :nth-of-type(1) {
+      order: 1;
+    }
+    :nth-of-type(2) {
+      order: 3;
+    }
+    :nth-of-type(3) {
+      order: 2;
+    }
+    :nth-of-type(4) {
+      order: 4;
+    }
+  }
+  
+
   div:nth-of-type(1) {
     height: 2rem;
     width: 2rem;
@@ -39,6 +55,11 @@ const Social = styled(UnstyledSocial)`
     font-size: 1.3rem;
     line-height: 1.9rem;
     margin-left: 1.3rem;
+
+    @media (min-width: 768px) {
+      font-size: 1.5rem;
+      line-height: 2.2rem;
+    }
   }
 `
 
@@ -60,6 +81,7 @@ const SocialBar = styled(UnstyledSocialBar)`
 
   @media (min-width: 768px) {
     display: grid;
+    gap: 1.6rem 4.8rem;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
   }

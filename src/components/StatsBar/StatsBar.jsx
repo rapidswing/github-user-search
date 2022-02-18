@@ -60,7 +60,7 @@ const StatsBar = styled(UnstyledStatsBar)`
   padding: 1.85rem 1.45rem;
 
   @media (min-width: 768px) {
-
+    gap: 0.2rem;
   }
 `
 
