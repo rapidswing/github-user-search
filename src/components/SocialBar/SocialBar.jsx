@@ -1,20 +1,25 @@
 import styled from 'styled-components'
 
-import IconLocation from 'assets/icon-location.svg'
-import IconWebsite from 'assets/icon-website.svg'
-import IconTwitter from 'assets/icon-twitter.svg'
-import IconCompany from 'assets/icon-company.svg'
+import { ReactComponent as IconLocation } from 'assets/icon-location.svg'
+import { ReactComponent as IconWebsite } from 'assets/icon-website.svg'
+import { ReactComponent as IconTwitter } from 'assets/icon-twitter.svg'
+import { ReactComponent as IconCompany } from 'assets/icon-company.svg'
 
-const UnstyledSocial = ({ alt, className, data, img, ...rest }) => (
-  <div className={className}>
-    <div>
-      <img src={img} alt={alt} />
+const UnstyledSocial = ({ className, property, data, img }) => {
+  const Icon = img
+
+  return (
+    <div className={className}>
+      <div>
+        <Icon />
+        {/* <img src={img} alt={property} /> */}
+      </div>
+      <div>
+        {data || 'Not available'}
+      </div>
     </div>
-    <div>
-      {data || 'Not available'}
-    </div>
-  </div>
-)
+  )
+}
 
 const Social = styled(UnstyledSocial)`
   display: flex;
@@ -24,6 +29,10 @@ const Social = styled(UnstyledSocial)`
   div:nth-of-type(1) {
     height: 2rem;
     width: 2rem;
+
+    path {
+      fill: ${props => props.theme.colors.social};
+    }
   }
 
   div:nth-of-type(2) {
@@ -37,10 +46,10 @@ const Social = styled(UnstyledSocial)`
 const UnstyledSocialBar = ({ className, user }) => {
   return (
     <div className={className}>
-      <Social alt="Location" data={user.location} img={IconLocation} />
-      <Social alt="Website" data={user.website} img={IconWebsite} />
-      <Social alt="Twitter" data={user.twitter} img={IconTwitter} />
-      <Social alt="Company" data={user.company} img={IconCompany} />
+      <Social property="Location" data={user.location} img={IconLocation} />
+      <Social property="Website" data={user.website} img={IconWebsite} />
+      <Social property="Twitter" data={user.twitter} img={IconTwitter} />
+      <Social property="Company" data={user.company} img={IconCompany} />
     </div>
   )
 }
