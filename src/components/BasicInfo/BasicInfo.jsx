@@ -48,7 +48,6 @@ const Login = styled.div`
   font-size: 1.3rem;
   line-height: 1.9rem;
   margin-bottom: 0.6rem;
-  text-decoration: underline;
 
   @media (min-width: 768px) {
     font-size: 1.6rem;
