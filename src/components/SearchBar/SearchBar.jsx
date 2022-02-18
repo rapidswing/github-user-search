@@ -4,7 +4,50 @@ import styled from 'styled-components'
 
 import IconSearch from 'assets/icon-search.svg'
 
-const UnstyledSearchBar = ({ className, children, error, setName }) => {
+const UnstyledErrorMessage = ({ className }) => (
+  <div className={className}>No results</div>
+)
+
+const ErrorMessage = styled(UnstyledErrorMessage)`
+  align-items: center;
+  background: ${props => props.theme.colors.searchBg};
+  color: ${props => props.theme.colors.errorText};
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  padding-left: 1rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 2;
+`
+
+const UnstyledInputContainer = ({ className, clearError, error, inputName, setInputName }) => {
+  const handleChange = (event) => {
+    clearError()
+    setInputName(event.target.value)
+  }
+
+  return (
+    <div className={className}>
+      <input
+        onChange={handleChange}
+        placeholder="Search GitHub username…"
+        spellCheck="false"
+        type="text"
+        value={inputName}
+      />
+      {error && <ErrorMessage />}
+    </div>
+  )
+}
+
+const InputContainer = styled(UnstyledInputContainer)`
+  display: inline-block;
+  position: relative;
+`
+
+const UnstyledSearchBar = ({ className, children, clearError, error, isLoading, setName }) => {
   const [inputName, setInputName] = useState('')
 
   const handleSubmit = (event) => {
@@ -17,11 +60,11 @@ const UnstyledSearchBar = ({ className, children, error, setName }) => {
       <SearchIcon>
         <img src={IconSearch} alt="Search" />
       </SearchIcon>
-      <input
-        onChange={(event) => setInputName(event.target.value)}
-        placeholder="Search GitHub username…"
-        type="text"
-        value={inputName}
+      <InputContainer
+        clearError={clearError}
+        error={error}
+        inputName={inputName}
+        setInputName={setInputName}
       />
       <button>Search</button>
     </form >
@@ -36,6 +79,7 @@ const SearchBar = styled(UnstyledSearchBar)`
   border-radius: 1.5rem;
   display: grid;
   grid-template-columns: auto 1fr auto;
+  position: relative;
 
   button {
     background: ${props => props.theme.colors.searchBtnBg};
@@ -49,6 +93,10 @@ const SearchBar = styled(UnstyledSearchBar)`
     line-height: 2.1rem;
     margin: 0.7rem;
     padding: 1.25rem 1.4rem 1.25rem 1.8rem;
+
+    ${({ error, isLoading, theme }) => (error || isLoading) && `
+      background: ${theme.colors.searchBtnBgActive};
+    `}
 
     @media (min-width: 768px) {
       font-size: 1.6rem;
@@ -72,15 +120,18 @@ const SearchBar = styled(UnstyledSearchBar)`
   input {
     background: ${props => props.theme.colors.searchBg};
     border: none;
+    caret-color: ${props => props.theme.colors.searchCaret};
     color: ${props => props.theme.colors.searchText};
     font-family: ${props => props.theme.font};
     font-size: 1.3rem;
     line-height: 2.5rem;
-    margin-left: 0.7rem;
+    margin-left: 0;
+    outline: none;
+    padding-left: 0.7rem;
+    width: 100%;
 
     @media (min-width: 768px) {
       font-size: 1.8rem;
-      margin-left: 2.4rem;
     }
 
     ::placeholder,

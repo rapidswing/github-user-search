@@ -8,6 +8,10 @@ export const useOctokit = (initialName) => {
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState(null)
 
+  const clearError = () => {
+    setError(null);
+  }
+
   useEffect(() => {
     setIsLoading(true)
     const fetchData = async () => {
@@ -18,12 +22,12 @@ export const useOctokit = (initialName) => {
         setData(data)
         setIsLoading(false)
       } catch (error) {
-        setError(error)
+        setError(true)
         setIsLoading(false)
       }
     }
     fetchData()
   }, [name])
 
-  return { data, setName, isLoading, error }
+  return { data, setName, isLoading, error, clearError }
 }

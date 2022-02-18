@@ -62,7 +62,7 @@ const StyledUserCard = styled(UserCard)`
 
 export default function App() {
   const [selectedTheme, setSelectedTheme] = useState(themes['light'])
-  const { data, setName, isLoading, error } = useOctokit('octocat')
+  const { data, setName, isLoading, clearError, error } = useOctokit('octocat')
 
   useEffect(() => {
     WebFont.load({
@@ -86,7 +86,7 @@ export default function App() {
         <GlobalStyle />
         <Container>
           <TitleBar theme={selectedTheme} toggleTheme={toggleTheme} />
-          <StyledSearchBar error={error} setName={setName} />
+          <StyledSearchBar clearError={clearError} error={error} isLoading={isLoading} setName={setName} />
           {data ? <StyledUserCard user={data} /> : undefined}
         </Container>
       </ThemeProvider>
