@@ -146,6 +146,7 @@ const SearchBar = styled(UnstyledSearchBar)`
 
     @media (min-width: 768px) {
       font-size: 1.8rem;
+      padding-left: 2rem;
     }
 
     ::placeholder,
