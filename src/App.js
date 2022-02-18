@@ -34,14 +34,17 @@ const GlobalStyle = createGlobalStyle`
 `
 
 const Container = styled.div`
-  padding: 0 2.4rem;
   margin: 3.1rem auto 0;
-  width: 375px;
+  width: 327px;
 
   @media (min-width: 768px) {
     margin-top: 14rem;
-    padding: 0 9.75rem;
-    width: 768px;
+    width: 573px;
+  }
+
+  @media (min-width: 1440px) {
+    margin-top: 14rem;
+    width: 730px;
   }
 `
 
