@@ -3,14 +3,18 @@ import styled from 'styled-components'
 import IconMoon from 'assets/icon-moon.svg'
 import IconSun from 'assets/icon-sun.svg'
 
-const UnstyledTitleBar = ({ className, children }) => (
+const UnstyledTitleBar = ({ className, children, theme, toggleTheme }) => (
   <div className={className}>
     <Title>devfinder</Title>
-    <ToggleTheme>
-      <span>DARK</span>
-      <img src={IconMoon} alt="Moon" />
+    <ToggleTheme onClick={() => toggleTheme()}>
+      <span>{theme.name === 'light' ? 'LIGHT' : 'DARK'}</span>
+      <img
+        src={theme.name === 'light' ? IconMoon : IconSun}
+        alt={theme.name === 'light' ? 'Dark' : 'Light'}
+      />
     </ToggleTheme>
   </div>
+
 )
 
 const TitleBar = styled(UnstyledTitleBar)`

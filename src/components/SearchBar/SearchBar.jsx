@@ -40,6 +40,7 @@ const SearchBar = styled(UnstyledSearchBar)`
   }
 
   input {
+    background: ${props => props.theme.colors.searchBg};
     border: none;
     color: ${props => props.theme.colors.searchText};
     font-family: ${props => props.theme.font};

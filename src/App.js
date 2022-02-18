@@ -47,7 +47,7 @@ const StyledUserCard = styled(UserCard)`
 `
 
 export default function App() {
-  const [selectedTheme, setSelected] = useState(themes[0])
+  const [selectedTheme, setSelectedTheme] = useState(themes['light'])
   const { data, isLoading, error } = useOctokit('octocat')
 
   useEffect(() => {
@@ -58,12 +58,21 @@ export default function App() {
     })
   }, [selectedTheme.font])
 
+  const toggleTheme = () => {
+    if (selectedTheme.name === 'light') {
+      setSelectedTheme(themes['dark']);
+    } else {
+      setSelectedTheme(themes['light']);
+    }
+    console.log('hi')
+  }
+
   return (
     <>
       <ThemeProvider theme={selectedTheme} >
         <GlobalStyle />
         <Container>
-          <TitleBar />
+          <TitleBar theme={selectedTheme} toggleTheme={toggleTheme} />
           <StyledSearchBar />
           {data ? <StyledUserCard user={data} /> : undefined}
         </Container>

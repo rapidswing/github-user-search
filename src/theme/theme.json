@@ -1,5 +1,6 @@
-[
-  {
+{
+  "light": {
+    "name": "light",
     "colors": {
       "background": "#F6F8FF",
       "themeToggle": "#4B6A9B",
@@ -21,7 +22,8 @@
     },
     "font": "Space Mono"
   },
-  {
+  "dark": {
+    "name": "dark",
     "colors": {
       "background": "#141D2F",
       "themeToggle": "#FFFFFF",
@@ -43,4 +45,4 @@
     },
     "font": "Space Mono"
   }
-]
+}
