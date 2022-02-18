@@ -72,6 +72,14 @@ const UnstyledSearchBar = ({ className, children, clearError, error, isLoading, 
 
 }
 
+const SearchIcon = styled.div`
+  padding-left: 1.6rem;
+
+  @media (min-width: 768px) {
+    padding-left: 3.2rem;
+  }
+`
+
 const SearchBar = styled(UnstyledSearchBar)`
   align-items: center;
   background: ${props => props.theme.colors.searchBg};
@@ -86,6 +94,7 @@ const SearchBar = styled(UnstyledSearchBar)`
     border: none;
     border-radius: 1rem;
     color: ${props => props.theme.colors.searchBtnText};
+    cursor: pointer;
     font-family: ${props => props.theme.font};
     font-size: 1.2rem;
     font-weight: 700;
@@ -97,6 +106,10 @@ const SearchBar = styled(UnstyledSearchBar)`
     ${({ error, isLoading, theme }) => (error || isLoading) && `
       background: ${theme.colors.searchBtnBgActive};
     `}
+
+    :hover {
+      background: ${props => props.theme.colors.searchBtnBgActive};
+    }
 
     @media (min-width: 768px) {
       font-size: 1.6rem;
@@ -122,6 +135,7 @@ const SearchBar = styled(UnstyledSearchBar)`
     border: none;
     caret-color: ${props => props.theme.colors.searchCaret};
     color: ${props => props.theme.colors.searchText};
+    cursor: pointer;
     font-family: ${props => props.theme.font};
     font-size: 1.3rem;
     line-height: 2.5rem;
@@ -143,14 +157,6 @@ const SearchBar = styled(UnstyledSearchBar)`
       color: ${props => props.theme.colors.searchPlaceholder};
       opacity: 0.4;
     }
-  }
-`
-
-const SearchIcon = styled.div`
-  padding-left: 1.6rem;
-
-  @media (min-width: 768px) {
-    padding-left: 3.2rem;
   }
 `
 

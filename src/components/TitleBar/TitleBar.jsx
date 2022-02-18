@@ -33,6 +33,7 @@ const Title = styled.div`
 
 const ToggleTheme = styled.div`
   align-items: center;
+  cursor: pointer;
   display: flex;
   flex-direction: row;
   font-size: 1.3rem;

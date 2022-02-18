@@ -14,7 +14,10 @@ const UnstyledSocial = ({ className, property, data, img }) => {
         <Icon />
       </div>
       <div>
-        {data || 'Not available'}
+        {data ? 
+          (property === 'Website' ? <a href={data} alt="User's website" >{data}</a> : data) :
+          'Not available'
+        }
       </div>
     </div>
   )
@@ -24,22 +27,6 @@ const Social = styled(UnstyledSocial)`
   display: flex;
   flex-direction: row;
   opacity: ${props => props.data ? 1 : 0.5};
-
-  @media (min-width: 768px) {
-    :nth-of-type(1) {
-      order: 1;
-    }
-    :nth-of-type(2) {
-      order: 3;
-    }
-    :nth-of-type(3) {
-      order: 2;
-    }
-    :nth-of-type(4) {
-      order: 4;
-    }
-  }
-  
 
   div:nth-of-type(1) {
     height: 2rem;
@@ -61,14 +48,29 @@ const Social = styled(UnstyledSocial)`
       line-height: 2.2rem;
     }
   }
+
+  @media (min-width: 768px) {
+    :nth-of-type(1) {
+      order: 1;
+    }
+    :nth-of-type(2) {
+      order: 3;
+    }
+    :nth-of-type(3) {
+      order: 2;
+    }
+    :nth-of-type(4) {
+      order: 4;
+    }
+  }
 `
 
 const UnstyledSocialBar = ({ className, user }) => {
   return (
     <div className={className}>
       <Social property="Location" data={user.location} img={IconLocation} />
-      <Social property="Website" data={user.website} img={IconWebsite} />
-      <Social property="Twitter" data={user.twitter} img={IconTwitter} />
+      <Social property="Website" data={user.blog} img={IconWebsite} />
+      <Social property="Twitter" data={user.twitter_username} img={IconTwitter} />
       <Social property="Company" data={user.company} img={IconCompany} />
     </div>
   )
@@ -78,6 +80,19 @@ const SocialBar = styled(UnstyledSocialBar)`
   display: grid;
   gap: 1.6rem;
   grid-template-columns: 1fr;
+
+  div:nth-of-type(2) {
+    >div:nth-of-type(2) {
+      a {
+        color: ${props => props.theme.colors.social};
+        text-decoration: none;
+
+        :hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
 
   @media (min-width: 768px) {
     display: grid;
