@@ -7,7 +7,7 @@ const UnstyledTitleBar = ({ className, children, theme, toggleTheme }) => (
   <div className={className}>
     <Title>devfinder</Title>
     <ToggleTheme onClick={() => toggleTheme()}>
-      <span>{theme.name === 'light' ? 'LIGHT' : 'DARK'}</span>
+      <span>{theme.name === 'light' ? 'DARK' : 'LIGHT'}</span>
       <img
         src={theme.name === 'light' ? IconMoon : IconSun}
         alt={theme.name === 'light' ? 'Dark' : 'Light'}
