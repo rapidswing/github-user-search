@@ -11,6 +11,7 @@ const UnstyledTitleBar = ({ className, theme, toggleTheme }) => (
       <img
         src={theme.name === 'light' ? IconMoon : IconSun}
         alt={theme.name === 'light' ? 'Dark' : 'Light'}
+        draggable="false"
       />
     </ToggleTheme>
   </div>
@@ -22,6 +23,7 @@ const TitleBar = styled(UnstyledTitleBar)`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  user-select: none;
 `
 
 const Title = styled.div`

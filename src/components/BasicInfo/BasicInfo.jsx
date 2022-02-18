@@ -11,7 +11,6 @@ const UnstyledBasicInfo = ({ className, user }) => (
   </div>
 )
 
-
 const BasicInfo = styled(UnstyledBasicInfo)`
   display: flex;
   flex-direction: column;

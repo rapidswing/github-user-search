@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react'
 
 import { createGlobalStyle, ThemeProvider } from 'styled-components'
+import { useOctokit } from 'hooks/UseOctokit'
 import styled from 'styled-components'
 import WebFont from 'webfontloader'
 
-import { useOctokit } from 'hooks/UseOctokit'
 import SearchBar from 'components/SearchBar/SearchBar'
 import TitleBar from 'components/TitleBar/TitleBar'
 import UserCard from 'components/UserCard/UserCard'
